@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Maintenence</title>
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+
+<body>
+    <div class="heading">
+        <p>Prediction Of RUL </p>
+    </div>
+
+    <section class="section_1">
+        <div class="prediction">
+            <div class="secondary_heading">
+                <p>Prediction</p>
+            </div>
+            <div class="Input_data">
+                <form method="POST">
+
+                    <label for="selectfile">Select File For Prediction:-</label>
+                    <input type="file" name="file" id="selectfile" required>
+
+                    <input type="submit" value="submit" class="btn">
+                    <p>Note:File must be in txt format and seperated by 'single space'</p>
+
+                </form>
+            </div>
+            <div class="result">
+                <p>Click the Bellow Link to Download The Prediction File</p>
+                <!-- make visiable whien input file uploaded and prediction make -->
+                <a href="#" download="./Result_Files/result.csv">Click here>></a>
+            </div>
+        </div>
+        <div class="training">
+            <div class="secondary_heading">
+                <p>Training</p>
+            </div>
+            <p>To Retrain the Model You need to give the training files which is in '.txt'.and it's having a 
+                minimun 26 columns .Model is also need to test and RUL files to check the score of train model.
+                The main thing is the total files are in 'archive/' folder.
+
+            </p>
+            <br>
+            <p>click below to go for training</p>
+            <a href="/train">Click Here>></a>
+            <div class="aftertrain">
+                <!-- make score visiable when model is retrained -->
+                <p>Model Accurcy={score}-{score1}</p><br>
+                <p>Click Below To See Visualization</p>
+                <div class="visualization">
+
+               
+                <a href="/Test_Profile_Report">Testdata_Visualization</a>
+                <a href="/Train_Profile_Report">Traindata_visualization</a> </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <pre>Copyright &copy;  Predictive Maintenence.com</pre>
+    </footer>
+</body>
+
+</html>
