@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: rgb(134, 138, 139);
+}   
+.training,.prediction{
+    border: 1px solid rgb(43, 41, 41);
+}
+
+
+.heading{
+    margin-top: 100px;
+    text-align: center;
+}
+.heading p{
+    font-size: 40px;
+}
+.secondary_heading{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+.section_1{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+.Input_data{
+    width: 70%;
+    margin-left: 100px;
+    margin-top: 30px;
+
+}
+/* .Input_data form{
+    border: 1px solid blue;
+    /* display: flex;
+    flex-direction: column; */
+
+
+.Input_data form input{
+    padding: 8px;
+    border-radius: 15px;
+    border: 0.5px solid black;
+    
+}
+.btn{
+    margin-left: 150px;
+    width: 100px;
+    margin-top: 40px;
+    background-color: green;;
+}
+.prediction{
+    width: 50%;
+    height: 350px;
+}
+.result{
+    margin-top: 30px;
+    text-align: center;
+}
+.training{
+    width: 40%;
+    height: auto;
+}
+.training p{
+    text-align: center;
+}
+.training a{
+    margin-left: 240px;
+}
+
+footer{
+    margin-top: 50px;
+}
+footer pre{
+    text-align: center;
+}
+.aftertrain{
+    /* display:flex; */
+    margin-top: 50px;
+}
