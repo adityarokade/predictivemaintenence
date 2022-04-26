@@ -20,11 +20,15 @@ app = Flask(__name__)
 
 @app.route('/train',methods=['GET','POST'])
 def training():
-    path="archive/CMaps/"
-    train=Training_Validation(path)
-    score,score1=train.Data_Validation()
-    
-    print("Train Complete",score,score1)
+    try:
+
+        path="archive/CMaps/"
+        train=Training_Validation(path)
+        score,score1=train.Data_Validation()
+        
+        print("Train Complete",score,score1)
+    except:
+        print("Error in train")
     return render_template('index.html')
 
 
@@ -32,14 +36,18 @@ def training():
 def Predict():
     if request.method=='POST':
         file=request.form['file']
+        try:
 
-        df=pd.read_csv(file,sep=" ",header=None)
-        Input_File_Path="Prediction_Files/Input.csv"
-        File_Operation=File_operation()
-        File_Operation.Delete_Existing_File(Input_File_Path)
-        df.to_csv(Input_File_Path,sep=",")
-       
-        pred=Prediction().Prediction()
+            df=pd.read_csv(file,sep=" ",header=None)
+            Input_File_Path="Prediction_Files/Input1.csv"
+            File_Operation=File_operation()
+            File_Operation.Delete_Existing_File(Input_File_Path)
+            df.to_csv(Input_File_Path,sep=",")
+        
+            pred=Prediction().Prediction()
+        except:
+            pass
+        # print(pred)
        
     
 
@@ -74,3 +82,6 @@ if __name__ == "__main__":
     #httpd = simple_server.make_server(host='127.0.0.1', port=5000, app=app)
     # print("Serving on %s %d" % (host, port))
     httpd.serve_forever()
+
+# if __name__=="__main__":
+#     app.run()

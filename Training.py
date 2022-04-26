@@ -25,7 +25,8 @@ class Training_Validation:
         self.Total_Test_Data="./Total_Test_Data.csv"
         self.selected_features=['cycles', 'T24', 'T30', 'T50','P15', 'P30','Nf', 'Nc','Ps30','NRf', 'NRc', 'BPR']
         self.lables='RUL'
-        self.Model_Filename="./Forest_Model_11.sav"
+        self.Model_Filename="./Forest_model_11.sav"
+        # self.Model_Filename="./Forset_Model_11.sav"
         self.File_Selection=File_Selection()
         self.File_Preprocessing=File_Preprocessing(self.Data_Files_path,self.train_path,self.test_path,self.RUL_path)
         self.Basic_Train_Data_Preprocessing=Basic_Train_Data_Preprocessing()

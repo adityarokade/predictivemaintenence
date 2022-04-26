@@ -94,6 +94,7 @@ class Data_Prediction:
             self.File_operation.Delete_Existing_File(self.result_filename)
             self.df.to_csv(self.result_filename,sep=",")
             self.log_writer.log(self.file_object,'Result File Saved successfully')
+            print("RE File saved")
         except:
             self.log_writer.log(self.file_object,'Error in Saving Result File')
         

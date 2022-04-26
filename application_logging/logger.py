@@ -23,4 +23,4 @@ class App_Logger:
             self.current_time = self.now.strftime("%H:%M:%S")
             file_object.write(str(self.date) + "/" + str(self.current_time) + "\t\t" + log_message +"\n")
         except:
-            pass
+            print("Error in Log")
