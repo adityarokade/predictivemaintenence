@@ -1,16 +1,31 @@
 
-from flask import Flask,render_template
+from flask import Flask,render_template,redirect
 
 from wsgiref import simple_server
 
 from flask import Flask, session, request, Response, jsonify
-
-
+from Training import Training_Validation
+from File_operations.File_operation import File_operation
 
 import atexit
 import uuid
 import os
+
+import shutil
+import pandas as pd
+
+
+
 app = Flask(__name__)
+
+@app.route('/train',methods=['GET','POST'])
+def training():
+    path="archive/CMaps/"
+    train=Training_Validation(path)
+    score,score1=train.Data_Validation()
+    
+    print("Train Complete",score,score1)
+    return render_template('index.html')
 
 
 @app.route('/', methods=['GET', 'POST'])
