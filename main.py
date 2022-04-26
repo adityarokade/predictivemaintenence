@@ -6,7 +6,7 @@ from wsgiref import simple_server
 from flask import Flask, session, request, Response, jsonify
 from Training import Training_Validation
 from File_operations.File_operation import File_operation
-
+from Prediction import Prediction
 import atexit
 import uuid
 import os
@@ -28,8 +28,28 @@ def training():
     return render_template('index.html')
 
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
+@app.route('/',methods=['GET','POST'])
+def Predict():
+    if request.method=='POST':
+        file=request.form['file']
+
+        df=pd.read_csv(file,sep=" ",header=None)
+        Input_File_Path="Prediction_Files/Input.csv"
+        File_Operation=File_operation()
+        File_Operation.Delete_Existing_File(Input_File_Path)
+        df.to_csv(Input_File_Path,sep=",")
+       
+        pred=Prediction().Prediction()
+       
+    
+
+
+
+              
+
+
+
+
     return render_template('index.html')
     # return "Flask app is running to good to go pankaj is chutiya"
 
